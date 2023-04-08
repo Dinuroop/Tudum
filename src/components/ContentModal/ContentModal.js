@@ -86,7 +86,7 @@ export default function TransitionsModal({ children, media_type, id }) {
       console.log(content);
       try{
         console.log("trying");
-        await axios.post("http://localhost:4000/api/user/add",{
+        await axios.post("https://tudum.onrender.com/api/user/add",{
           email,
           data: content,
         })
@@ -96,7 +96,7 @@ export default function TransitionsModal({ children, media_type, id }) {
     }
     if(added){
       try{
-        await axios.put("http://localhost:4000/api/user/remove",{
+        await axios.put("https://tudum.onrender.com/api/user/remove",{
           email,
           data: content.id
         })

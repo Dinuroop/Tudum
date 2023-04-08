@@ -10,7 +10,7 @@ export default function Profile() {
       console.log("trying");
       console.log(email)
       if(email){
-      await axios.get(`http://localhost:4000/api/user/liked/${email}`)
+      await axios.get(`https://tudum.onrender.com/api/user/liked/${email}`)
       .then((res)=>{
         console.log(res.data)
         setContent(res.data.movies)
