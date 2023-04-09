@@ -9,6 +9,9 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import {BsList} from "react-icons/bs";
 // import PersonIcon from '@mui/icons-material/Person';
 import { useNavigate } from "react-router-dom";
+import useSound from "use-sound";
+import tudum from '../Assests/audio.mp3'
+
 
 const useStyles = makeStyles({
   root: {
@@ -24,18 +27,24 @@ export default function SimpleBottomNavigation() {
   const navigate = useNavigate();
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [play] = useSound(tudum)
 
   useEffect(() => {
     if (value === 0) {
       navigate("/trending");
+      {play()}
     } else if (value === 1) {
       navigate("/movies");
+      {play()}
     } else if (value === 2) {
       navigate("/series");
+      {play()}
     } else if (value === 3) {
       navigate("/search");
+      {play()}
     } else if (value === 4){
       navigate("/profile");
+      {play()}
     }
   }, [value]);
 

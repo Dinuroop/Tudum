@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
+import useSound from "use-sound";
+import tudum from '../../Assests/audio.mp3'
 
 const Trending = () => {
   const [page, setPage] = useState(1);
@@ -29,8 +31,11 @@ const Trending = () => {
     // eslint-disable-next-line
   }, [page]);
 
+  const [play] = useSound(tudum)
+
   return (
     <div>
+      {play()}
       <span className="pageTitle">Trending Today</span>
       <div className="trending">
         {content &&

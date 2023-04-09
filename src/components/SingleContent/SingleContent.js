@@ -9,6 +9,7 @@ const SingleContent = ({
   title,
   media_type,
   vote_average,
+  onClick
 }) => {
   return (
     <ContentModal media_type={media_type} id={id}>

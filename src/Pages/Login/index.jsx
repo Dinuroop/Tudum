@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../../config/firebase-config";
+import useSound from "use-sound";
+import tudum from '../../Assests/audio.mp3'
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +16,7 @@ const Login = () => {
       navigate("/trending");
     }
   }, [])
-
+  const [play] = useSound(tudum)
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -32,6 +34,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <LoginStyled>
       <div className="login_container">
         <div className="login_form_container">
@@ -72,6 +75,7 @@ const Login = () => {
         </div>
       </div>
     </LoginStyled>
+    </>
   );
 };
 
