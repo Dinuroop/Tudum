@@ -8,6 +8,7 @@ const Header = () => {
   const logout=()=>{
     localStorage.removeItem('email');
     navigate("/");
+    window.location.reload(false);
   }
   return (
     <div>

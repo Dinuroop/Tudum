@@ -23,6 +23,7 @@ const Login = () => {
         const user = userCredential.user;
         navigate("/trending");
         localStorage.setItem('email',email);
+        window.location.reload(false)
         console.log(user);
       })
     } catch (error) {
@@ -30,10 +31,6 @@ const Login = () => {
     }
   };
 
-  // onAuthStateChanged(firebaseAuth, (currentUser) => {
-  //   if (currentUser) {
-  //     navigate("/trending")};
-  // });
   return (
     <LoginStyled>
       <div className="login_container">
